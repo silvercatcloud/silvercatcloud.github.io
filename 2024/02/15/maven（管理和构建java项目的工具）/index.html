@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://silvercatcloud.github.io">
-  <title>GIT拉取GitHub项目到本地 | silvercat</title>
+  <title>silvercat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+  <meta name="description" content="maven（管理和构建java项目的工具）1.管理(jar包)管理包,可升级。添加以下依赖到 pom.xml 文件中： 12345678910&lt;dependencies&gt;    &lt;!-- 在这里添加你的依赖 --&gt;    &lt;dependency&gt;        &lt;groupId&gt;ldapjdk&lt;&#x2F;groupId&gt;  &lt;!-- 库名称">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIT拉取GitHub项目到本地">
-<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/index.html">
+<meta property="og:title" content="silvercat">
+<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/index.html">
 <meta property="og:site_name" content="silvercat">
-<meta property="og:description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+<meta property="og:description" content="maven（管理和构建java项目的工具）1.管理(jar包)管理包,可升级。添加以下依赖到 pom.xml 文件中： 12345678910&lt;dependencies&gt;    &lt;!-- 在这里添加你的依赖 --&gt;    &lt;dependency&gt;        &lt;groupId&gt;ldapjdk&lt;&#x2F;groupId&gt;  &lt;!-- 库名称">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-10T07:23:25.000Z">
-<meta property="article:modified_time" content="2024-02-10T07:24:50.049Z">
+<meta property="article:published_time" content="2024-02-15T03:55:30.947Z">
+<meta property="article:modified_time" content="2024-02-16T03:00:31.253Z">
 <meta property="article:author" content="YuanWenyi">
-<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="silvercat" type="application/atom+xml">
@@ -151,30 +150,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GIT拉取GitHub项目到本地" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-maven（管理和构建java项目的工具）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      GIT拉取GitHub项目到本地
-    </h1>
-  
-
-        
-        <a href="/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" class="archive-article-date">
-  	<time datetime="2024-02-10T07:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-10</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关键语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">git add README.md //文件添加到仓库</span><br><span class="line">git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库</span><br><span class="line">git push -u origin master //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure>
+        <h3 id="maven（管理和构建java项目的工具）"><a href="#maven（管理和构建java项目的工具）" class="headerlink" title="maven（管理和构建java项目的工具）"></a>maven（管理和构建java项目的工具）</h3><h6 id="1-管理-jar包-管理包-可升级。"><a href="#1-管理-jar包-管理包-可升级。" class="headerlink" title="1.管理(jar包)管理包,可升级。"></a>1.管理(jar包)管理包,可升级。</h6><p>添加以下依赖到 pom.xml 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;!-- 在这里添加你的依赖 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;ldapjdk&lt;/groupId&gt;  &lt;!-- 库名称，也可以自定义 --&gt;</span><br><span class="line">        &lt;artifactId&gt;ldapjdk&lt;/artifactId&gt;    &lt;!--库名称，也可以自定义--&gt;</span><br><span class="line">        &lt;version&gt;1.0&lt;/version&gt; &lt;!--版本号--&gt;</span><br><span class="line">        &lt;scope&gt;system&lt;/scope&gt; &lt;!--作用域--&gt;</span><br><span class="line">        &lt;systemPath&gt;$&#123;basedir&#125;\src\lib\ldapjdk.jar&lt;/systemPath&gt; &lt;!--项目根目录下的lib文件夹下--&gt;</span><br><span class="line">    &lt;/dependency&gt; </span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
 
-<p>详见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/193140870">https://zhuanlan.zhihu.com/p/193140870</a></p>
+<p>生成的目录结构(各开发软件统一)</p>
+<p>![image-20240215114850696](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240215114850696.png)</p>
+<p>pom.xml 文件完整代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; </span><br><span class="line">   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">   xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 </span><br><span class="line">   http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</span><br><span class="line">   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">   &lt;groupId&gt;com.companyname.bank&lt;/groupId&gt;</span><br><span class="line">   //maven的坐标</span><br><span class="line">   &lt;artifactId&gt;consumerBanking&lt;/artifactId&gt;</span><br><span class="line">   &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;name&gt;consumerBanking&lt;/name&gt;</span><br><span class="line">   &lt;url&gt;http://maven.apache.org&lt;/url&gt;</span><br><span class="line"> </span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">      &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">         &lt;version&gt;3.8.1&lt;/version&gt;</span><br><span class="line">         &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line"> </span><br><span class="line">      &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;ldapjdk&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;ldapjdk&lt;/artifactId&gt;</span><br><span class="line">         &lt;scope&gt;system&lt;/scope&gt;</span><br><span class="line">         &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">         &lt;systemPath&gt;$&#123;basedir&#125;\src\lib\ldapjdk.jar&lt;/systemPath&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>项目构建</p>
+<p>清理—编译—测试—打包—发布</p>
+<p>maven结构</p>
+<p>![image-20240215115659561](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240215115659561.png)</p>
+<p>仓库是先从本地仓库查找，再去远程仓库(私服)(阿里云)，再去中央仓库(唯一，国外)查找。</p>
+<p> SpingBootWeb</p>
+<p>浏览器发起 &#x2F;hello后，浏览器返回hello，world</p>
+<p>1.创建springboot工程</p>
+<p>2.定义一个HelloController类(HelloController.java文件夹)，添加hello方法</p>
+<p>3.启动类–启动springboot工程(run)—–&gt;localhost:8080&#x2F;hello</p>
 
       
 
@@ -204,17 +202,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -265,7 +252,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,7 +266,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/02/16/HTTP%E5%8D%8F%E8%AE%AE/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -288,6 +275,11 @@
       </div>
     </a>
   
+  
+    <a href="/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GIT拉取GitHub项目到本地</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

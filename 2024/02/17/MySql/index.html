@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://silvercatcloud.github.io">
-  <title>GIT拉取GitHub项目到本地 | silvercat</title>
+  <title>silvercat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+  <meta name="description" content="MySql1.安装，解压 2.环境变量配置 3.输入mysql -u root -p后输入数据库密码，出现mysql&gt;  即登录成功 ![image-20240217173142733](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217173142733.png) 查看数据表文件的存放路径，在cmd的mysql&gt;中输入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIT拉取GitHub项目到本地">
-<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/index.html">
+<meta property="og:title" content="silvercat">
+<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/17/MySql/index.html">
 <meta property="og:site_name" content="silvercat">
-<meta property="og:description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+<meta property="og:description" content="MySql1.安装，解压 2.环境变量配置 3.输入mysql -u root -p后输入数据库密码，出现mysql&gt;  即登录成功 ![image-20240217173142733](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217173142733.png) 查看数据表文件的存放路径，在cmd的mysql&gt;中输入">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-10T07:23:25.000Z">
-<meta property="article:modified_time" content="2024-02-10T07:24:50.049Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191029191548878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTUyMDUy,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2024-02-17T09:24:15.410Z">
+<meta property="article:modified_time" content="2024-02-17T12:42:52.056Z">
 <meta property="article:author" content="YuanWenyi">
-<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191029191548878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTUyMDUy,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="silvercat" type="application/atom+xml">
   
@@ -151,30 +152,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GIT拉取GitHub项目到本地" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MySql" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      GIT拉取GitHub项目到本地
-    </h1>
-  
-
-        
-        <a href="/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" class="archive-article-date">
-  	<time datetime="2024-02-10T07:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-10</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关键语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">git add README.md //文件添加到仓库</span><br><span class="line">git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库</span><br><span class="line">git push -u origin master //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure>
+        <h1 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h1><p>1.安装，解压</p>
+<p>2.环境变量配置</p>
+<p>3.输入mysql -u root -p后输入数据库密码，出现mysql&gt;  即登录成功</p>
+<p>![image-20240217173142733](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217173142733.png)</p>
+<p>查看数据表文件的存放路径，在cmd的mysql&gt;中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;%datadir%&#x27;;</span><br></pre></td></tr></table></figure>
 
-<p>详见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/193140870">https://zhuanlan.zhihu.com/p/193140870</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20191029191548878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTUyMDUy,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="数据库设计-DDL"><a href="#数据库设计-DDL" class="headerlink" title="数据库设计-DDL"></a>数据库设计-DDL</h3><h5 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h5><p>![image-20240217181131095](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217181131095.png)</p>
+<p>需求文档：</p>
+<ul>
+<li>在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。</li>
+</ul>
+<p>![image-20240217181141890](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217181141890.png)</p>
+<ul>
+<li>拿到产品原型和需求文档之后，我们首先要做的不是编码，而是要先进行项目的设计，其中就包括概要设计、详细设计、接口设计、数据库设计等等。</li>
+<li>数据库设计根据产品原型以及需求文档，要分析各个模块涉及到的表结构以及表结构之间的关系，以及表结构的详细信息。最终我们需要将数据库以及数据库当中的表结构设计创建出来。</li>
+</ul>
+<p>开发&#x2F;测试：</p>
+<ul>
+<li>参照页面原型和需求进行编码，实现业务功能。在这个过程当中，我们就需要来操作设计出来的数据库表结构，来完成业务的增删改查操作等。</li>
+</ul>
+<p>部署上线：</p>
+<ul>
+<li>在项目的功能开发测试完成之后，项目就可以上线运行了，后期如果项目遇到性能瓶颈，还需要对项目进行优化。优化很重要的一个部分就是数据库的优化，包括数据库当中索引的建立、SQL 的优化、分库分表等操作。</li>
+</ul>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><h4 id="1-查询数据库"><a href="#1-查询数据库" class="headerlink" title="1 查询数据库"></a>1 查询数据库</h4><p><strong>查询所有数据库：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182102799](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182102799.png)</p>
+<p><strong>查询当前数据库：</strong></p>
+<p>前提执行了use db01;命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182220000](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182220000.png)</p>
+<h4 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2 创建数据库"></a>2 创建数据库</h4><p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [ if not exists ] 数据库名;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182242218](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182242218.png)</p>
+<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3 删除数据库"></a>3 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [ if exists ] 数据库名 ;</span><br></pre></td></tr></table></figure>
+
+<p><em>说明：上述语法中的database，也可以替换成 schema</em></p>
+<h4 id="图形化工具"><a href="#图形化工具" class="headerlink" title="图形化工具"></a>图形化工具</h4><p>IDEA自带的Database</p>
+<p>。</p>
+<p>。</p>
+<p>。</p>
+<p>单表，多表建立，查询。。。</p>
+<p>。</p>
+<p>。</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一组操作的集合，它是一个不可分割的工作单位。事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">start transaction;/begin//开启事务</span><br><span class="line"></span><br><span class="line">...要执行的语句（&gt;1）...</span><br><span class="line"></span><br><span class="line">commmit;//若执行语句执行成功，再点击提交事务</span><br><span class="line"></span><br><span class="line">rollback;//若失败，则回滚事务</span><br></pre></td></tr></table></figure>
+
+<p>使用事务控制删除部门和删除该部门下的员工的操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 开启事务</span></span><br><span class="line"><span class="keyword">start</span> transaction ;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除学工部</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_dept <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除学工部的员工</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_emp <span class="keyword">where</span> dept_id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述的这组SQL语句，如果如果执行成功，则提交事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 提交事务 (成功时执行)</span></span><br><span class="line"><span class="keyword">commit</span> ;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述的这组SQL语句，如果如果执行失败，则回滚事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 回滚事务 (出错时执行)</span></span><br><span class="line"><span class="keyword">rollback</span> ;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>事务的四大特性</p>
+<p>1.原子性：事务是不可分割的最小单元，要么全部成功，要么全部失败</p>
+<p>2.一致性：事务完成时，必须使所有的数据都保持一致状态</p>
+<p>3.隔离性：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行</p>
+<p>4.持久性：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>本质上是放弃了默认的全表扫描，而采用一种数据结构（B+Tree，Hash索引…..），执行索引操作。使得查询效率大大提高！</p>
+<p>![image-20240217194326901](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217194326901.png)</p>
+<p>当然有优势，也会存在劣势。索引占用的存储空间大。且执行增删改操作后要重新维护，更新二叉树。</p>
+<p>但是！！利远远大于弊，对于一个业务系统，查询会占到90%以上，其性能较为重要。所以目前索引采用的还是十分广泛。</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引、Full-Text索引等。</p>
+<p>我们平常所说的索引，如果没有特别指明，都是指默认的 B+Tree 结构组织的索引。</p>
+<blockquote>
+<p>二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大</p>
+</blockquote>
+<p>![image-20221208174135229](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221208174135229.png) </p>
+<blockquote>
+<p>当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。</p>
+</blockquote>
+<p>![image-20221208174859866](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221208174859866.png) </p>
+<blockquote>
+<p>可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵平衡的二叉树）</p>
+</blockquote>
+<p>![image-20221209100647867](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221209100647867.png)</p>
+<blockquote>
+<p>但是在Mysql数据库中并没有使用二叉搜索数或二叉平衡数或红黑树来作为索引的结构。</p>
+</blockquote>
+<p>思考：采用二叉搜索树或者是红黑树来作为索引的结构有什么问题？</p>
+<details>
+    <summary>答案</summary>
+    最大的问题就是在数据量大的情况下，树的层级比较深，会影响检索速度。因为不管是二叉搜索数还是红黑数，一个节点下面只能有两个子节点。此时在数据量大的情况下，就会造成数的高度比较高，树的高度一旦高了，检索速度就会降低。
+</details>
+
+<p>![image-20240217200521309](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217200521309.png)</p>
+<p>B+Tree结构：</p>
+<ul>
+<li><p>每一个节点，可以存储多个key（有n个key，就有n个指针）</p>
+</li>
+<li><p>节点分为：叶子节点、非叶子节点</p>
+<ul>
+<li>叶子节点，就是最后一层子节点，所有的数据都存储在叶子节点上</li>
+<li>非叶子节点，不是树结构最下面的节点，用于索引数据，存储的是：key+指针</li>
+</ul>
+</li>
+<li><p>为了提高范围查询效率，叶子节点形成了一个双向链表，便于数据的排序及区间范围查询</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>拓展：</strong></p>
+<p>非叶子节点都是由key+指针域组成的，一个key占8字节，一个指针占6字节，而一个Page目录容量是16KB，那么可以计算出一个Page可以存储的元素个数：16*1024字节 &#x2F; (8+6)&#x3D;1170个元素。</p>
+<ul>
+<li>查看mysql索引节点大小：show global status like ‘innodb_page_size’;    – 节点大小：16384</li>
+</ul>
+<p>当根节点中可以存储1170个元素，那么根据每个元素的地址值又会找到下面的子节点，每个子节点也会存储1170个元素，那么第二层即第二次IO的时候就会找到数据大概是：1170*1170&#x3D;135W。也就是说B+Tree数据结构中只需要经历两次磁盘IO就可以找到135W条数据。</p>
+<p>对于第二层每个元素有指针，那么会找到第三层，第三层由key+数据组成，假设key+数据总大小是1KB，而每个节点一共能存储16KB，所以一个第三层一个节点大概可以存储16个元素(即16条记录)。那么结合第二层每个元素通过指针域找到第三层的节点，第二层一共是135W个元素，那么第三层总元素大小就是：135W*16结果就是2000W+的元素个数。</p>
+<p>结合上述分析B+Tree有如下优点：</p>
+<ul>
+<li>千万条数据，B+Tree可以控制在小于等于3的高度</li>
+<li>所有的数据都存储在叶子节点上，并且底层已经实现了按照索引进行排序，还可以支持范围查询，叶子节点是一个双向链表，支持从小到大或者从大到小查找</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HX4y1N7v6/?spm_id_from=333.337.search-card.all.click&vd_source=b49d408c60ae3222574a2848bdd6c525">【干货】数据库索引为什么使用B+Tree？_哔哩哔哩_bilibili</a></p>
+<h3>语法</h3>
+
+<p><strong>创建索引</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create  [ unique ]  index 索引名 on  表名 (字段名,... ) ;</span><br></pre></td></tr></table></figure>
+
+<p>案例：为tb_emp表的name字段建立一个索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index idx_emp_name on tb_emp(name);</span><br></pre></td></tr></table></figure>
+
+<p>在创建表时，如果添加了主键和唯一约束，就会默认创建：主键索引、唯一约束</p>
+<p>![image-20240217202914757](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217202914757.png)</p>
+<p><strong>查看索引</strong></p>
+<p>show  index  from  表名;</p>
+<p>案例：查询 tb_emp 表的索引信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show  index  from  tb_emp;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217203306166](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217203306166.png)</p>
+<p><strong>删除索引</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop  index  索引名  on  表名;</span><br></pre></td></tr></table></figure>
+
+<p>案例：删除 tb_emp 表中name字段的索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop index idx_emp_name on tb_emp;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -204,17 +336,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -265,7 +386,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/17/MySql/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,15 +400,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
+    <a href="/2024/02/17/%E5%93%8D%E5%BA%94---%E6%A1%88%E4%BE%8B-----%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

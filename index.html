@@ -148,6 +148,689 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MySql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h1><p>1.安装，解压</p>
+<p>2.环境变量配置</p>
+<p>3.输入mysql -u root -p后输入数据库密码，出现mysql&gt;  即登录成功</p>
+<p>![image-20240217173142733](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217173142733.png)</p>
+<p>查看数据表文件的存放路径，在cmd的mysql&gt;中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;%datadir%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20191029191548878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTUyMDUy,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="数据库设计-DDL"><a href="#数据库设计-DDL" class="headerlink" title="数据库设计-DDL"></a>数据库设计-DDL</h3><h5 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h5><p>![image-20240217181131095](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217181131095.png)</p>
+<p>需求文档：</p>
+<ul>
+<li>在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。</li>
+</ul>
+<p>![image-20240217181141890](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217181141890.png)</p>
+<ul>
+<li>拿到产品原型和需求文档之后，我们首先要做的不是编码，而是要先进行项目的设计，其中就包括概要设计、详细设计、接口设计、数据库设计等等。</li>
+<li>数据库设计根据产品原型以及需求文档，要分析各个模块涉及到的表结构以及表结构之间的关系，以及表结构的详细信息。最终我们需要将数据库以及数据库当中的表结构设计创建出来。</li>
+</ul>
+<p>开发&#x2F;测试：</p>
+<ul>
+<li>参照页面原型和需求进行编码，实现业务功能。在这个过程当中，我们就需要来操作设计出来的数据库表结构，来完成业务的增删改查操作等。</li>
+</ul>
+<p>部署上线：</p>
+<ul>
+<li>在项目的功能开发测试完成之后，项目就可以上线运行了，后期如果项目遇到性能瓶颈，还需要对项目进行优化。优化很重要的一个部分就是数据库的优化，包括数据库当中索引的建立、SQL 的优化、分库分表等操作。</li>
+</ul>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><h4 id="1-查询数据库"><a href="#1-查询数据库" class="headerlink" title="1 查询数据库"></a>1 查询数据库</h4><p><strong>查询所有数据库：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182102799](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182102799.png)</p>
+<p><strong>查询当前数据库：</strong></p>
+<p>前提执行了use db01;命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182220000](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182220000.png)</p>
+<h4 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2 创建数据库"></a>2 创建数据库</h4><p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [ if not exists ] 数据库名;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217182242218](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217182242218.png)</p>
+<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3 删除数据库"></a>3 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [ if exists ] 数据库名 ;</span><br></pre></td></tr></table></figure>
+
+<p><em>说明：上述语法中的database，也可以替换成 schema</em></p>
+<h4 id="图形化工具"><a href="#图形化工具" class="headerlink" title="图形化工具"></a>图形化工具</h4><p>IDEA自带的Database</p>
+<p>。</p>
+<p>。</p>
+<p>。</p>
+<p>单表，多表建立，查询。。。</p>
+<p>。</p>
+<p>。</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一组操作的集合，它是一个不可分割的工作单位。事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">start transaction;/begin//开启事务</span><br><span class="line"></span><br><span class="line">...要执行的语句（&gt;1）...</span><br><span class="line"></span><br><span class="line">commmit;//若执行语句执行成功，再点击提交事务</span><br><span class="line"></span><br><span class="line">rollback;//若失败，则回滚事务</span><br></pre></td></tr></table></figure>
+
+<p>使用事务控制删除部门和删除该部门下的员工的操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 开启事务</span></span><br><span class="line"><span class="keyword">start</span> transaction ;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除学工部</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_dept <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除学工部的员工</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_emp <span class="keyword">where</span> dept_id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述的这组SQL语句，如果如果执行成功，则提交事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 提交事务 (成功时执行)</span></span><br><span class="line"><span class="keyword">commit</span> ;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述的这组SQL语句，如果如果执行失败，则回滚事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 回滚事务 (出错时执行)</span></span><br><span class="line"><span class="keyword">rollback</span> ;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>事务的四大特性</p>
+<p>1.原子性：事务是不可分割的最小单元，要么全部成功，要么全部失败</p>
+<p>2.一致性：事务完成时，必须使所有的数据都保持一致状态</p>
+<p>3.隔离性：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行</p>
+<p>4.持久性：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>本质上是放弃了默认的全表扫描，而采用一种数据结构（B+Tree，Hash索引…..），执行索引操作。使得查询效率大大提高！</p>
+<p>![image-20240217194326901](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217194326901.png)</p>
+<p>当然有优势，也会存在劣势。索引占用的存储空间大。且执行增删改操作后要重新维护，更新二叉树。</p>
+<p>但是！！利远远大于弊，对于一个业务系统，查询会占到90%以上，其性能较为重要。所以目前索引采用的还是十分广泛。</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引、Full-Text索引等。</p>
+<p>我们平常所说的索引，如果没有特别指明，都是指默认的 B+Tree 结构组织的索引。</p>
+<blockquote>
+<p>二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大</p>
+</blockquote>
+<p>![image-20221208174135229](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221208174135229.png) </p>
+<blockquote>
+<p>当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。</p>
+</blockquote>
+<p>![image-20221208174859866](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221208174859866.png) </p>
+<blockquote>
+<p>可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵平衡的二叉树）</p>
+</blockquote>
+<p>![image-20221209100647867](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221209100647867.png)</p>
+<blockquote>
+<p>但是在Mysql数据库中并没有使用二叉搜索数或二叉平衡数或红黑树来作为索引的结构。</p>
+</blockquote>
+<p>思考：采用二叉搜索树或者是红黑树来作为索引的结构有什么问题？</p>
+<details>
+    <summary>答案</summary>
+    最大的问题就是在数据量大的情况下，树的层级比较深，会影响检索速度。因为不管是二叉搜索数还是红黑数，一个节点下面只能有两个子节点。此时在数据量大的情况下，就会造成数的高度比较高，树的高度一旦高了，检索速度就会降低。
+</details>
+
+<p>![image-20240217200521309](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217200521309.png)</p>
+<p>B+Tree结构：</p>
+<ul>
+<li><p>每一个节点，可以存储多个key（有n个key，就有n个指针）</p>
+</li>
+<li><p>节点分为：叶子节点、非叶子节点</p>
+<ul>
+<li>叶子节点，就是最后一层子节点，所有的数据都存储在叶子节点上</li>
+<li>非叶子节点，不是树结构最下面的节点，用于索引数据，存储的是：key+指针</li>
+</ul>
+</li>
+<li><p>为了提高范围查询效率，叶子节点形成了一个双向链表，便于数据的排序及区间范围查询</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>拓展：</strong></p>
+<p>非叶子节点都是由key+指针域组成的，一个key占8字节，一个指针占6字节，而一个Page目录容量是16KB，那么可以计算出一个Page可以存储的元素个数：16*1024字节 &#x2F; (8+6)&#x3D;1170个元素。</p>
+<ul>
+<li>查看mysql索引节点大小：show global status like ‘innodb_page_size’;    – 节点大小：16384</li>
+</ul>
+<p>当根节点中可以存储1170个元素，那么根据每个元素的地址值又会找到下面的子节点，每个子节点也会存储1170个元素，那么第二层即第二次IO的时候就会找到数据大概是：1170*1170&#x3D;135W。也就是说B+Tree数据结构中只需要经历两次磁盘IO就可以找到135W条数据。</p>
+<p>对于第二层每个元素有指针，那么会找到第三层，第三层由key+数据组成，假设key+数据总大小是1KB，而每个节点一共能存储16KB，所以一个第三层一个节点大概可以存储16个元素(即16条记录)。那么结合第二层每个元素通过指针域找到第三层的节点，第二层一共是135W个元素，那么第三层总元素大小就是：135W*16结果就是2000W+的元素个数。</p>
+<p>结合上述分析B+Tree有如下优点：</p>
+<ul>
+<li>千万条数据，B+Tree可以控制在小于等于3的高度</li>
+<li>所有的数据都存储在叶子节点上，并且底层已经实现了按照索引进行排序，还可以支持范围查询，叶子节点是一个双向链表，支持从小到大或者从大到小查找</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HX4y1N7v6/?spm_id_from=333.337.search-card.all.click&vd_source=b49d408c60ae3222574a2848bdd6c525">【干货】数据库索引为什么使用B+Tree？_哔哩哔哩_bilibili</a></p>
+<h3>语法</h3>
+
+<p><strong>创建索引</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create  [ unique ]  index 索引名 on  表名 (字段名,... ) ;</span><br></pre></td></tr></table></figure>
+
+<p>案例：为tb_emp表的name字段建立一个索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index idx_emp_name on tb_emp(name);</span><br></pre></td></tr></table></figure>
+
+<p>在创建表时，如果添加了主键和唯一约束，就会默认创建：主键索引、唯一约束</p>
+<p>![image-20240217202914757](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217202914757.png)</p>
+<p><strong>查看索引</strong></p>
+<p>show  index  from  表名;</p>
+<p>案例：查询 tb_emp 表的索引信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show  index  from  tb_emp;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240217203306166](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217203306166.png)</p>
+<p><strong>删除索引</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop  index  索引名  on  表名;</span><br></pre></td></tr></table></figure>
+
+<p>案例：删除 tb_emp 表中name字段的索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop index idx_emp_name on tb_emp;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/17/MySql/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-响应---案例-----三层架构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="响应—案例—–-三层架构"><a href="#响应—案例—–-三层架构" class="headerlink" title="响应—案例—–&gt;三层架构"></a>响应—案例—–&gt;三层架构</h3><p>JavaScript中使用axios发起HTTP的GET请求：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">        el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data() &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                tableData: []</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        mounted()&#123;<span class="comment">//定义了一个生命周期钩子函数，当Vue实例挂载到DOM后会自动调用该函数</span></span><br><span class="line">            axios.get(<span class="string">&#x27;/listEmp&#x27;</span>).then(res=&gt;&#123;    <span class="comment">//发送一个GET请求到/listEmp接口</span></span><br><span class="line">                <span class="keyword">if</span>(res.data.code)&#123; <span class="comment">//根据返回的响应数据判断是否成功</span></span><br><span class="line">                    <span class="built_in">this</span>.tableData = res.data.data;<span class="comment">//如果成功则将响应数据赋值给tableData</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>SpringBoot处理HTTP请求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EmpController</span> &#123;<span class="comment">//当一个HTTP客户端向应用发送到&quot;/listEmp&quot;路径的请求时，Spring MVC框架会自动将请求路由到这个带有@RequestMapping注解的方法</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/listEmp&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">list</span><span class="params">()</span>&#123;<span class="comment">// ... 具体处理逻辑 ...</span></span><br><span class="line">        <span class="comment">//1. 加载并解析emp.xml中的数据</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">file</span> <span class="operator">=</span> <span class="built_in">this</span>.getClass().getClassLoader().getResource(<span class="string">&quot;emp.xml&quot;</span>).getFile();</span><br><span class="line">        <span class="comment">//获取到类路径下&quot;emp.xml&quot;文件的实际物理路径</span></span><br><span class="line">        List&lt;Emp&gt; empList = XmlParserUtils.parse(file, Emp.class);</span><br><span class="line">        <span class="comment">//使用XmlParserUtils类的parse方法将emp.xml文件解析为一个Emp对象的列表</span></span><br><span class="line">        <span class="comment">//2. 对数据进行转换处理 - gender, job</span></span><br><span class="line">        empList.stream().forEach(emp -&gt; &#123;</span><br><span class="line">            <span class="comment">//处理 gender 1: 男, 2: 女</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">gender</span> <span class="operator">=</span> emp.getGender();</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">&quot;1&quot;</span>.equals(gender))&#123;</span><br><span class="line">                emp.setGender(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;2&quot;</span>.equals(gender))&#123;</span><br><span class="line">                emp.setGender(<span class="string">&quot;女&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//处理job - 1: 讲师, 2: 班主任 , 3: 就业指导</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">job</span> <span class="operator">=</span> emp.getJob();</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">&quot;1&quot;</span>.equals(job))&#123;</span><br><span class="line">                emp.setJob(<span class="string">&quot;讲师&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;2&quot;</span>.equals(job))&#123;</span><br><span class="line">                emp.setJob(<span class="string">&quot;班主任&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;3&quot;</span>.equals(job))&#123;</span><br><span class="line">                emp.setJob(<span class="string">&quot;就业指导&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//3. 响应数据 在所有数据转换完成后，函数创建了一个Result类型的对象</span></span><br><span class="line">        <span class="keyword">return</span> Result.success(empList); <span class="comment">// 将处理后的empList列表封装成一个Result对象，</span></span><br><span class="line">                                        <span class="comment">// 并使用Result.success(empList)方法返回给客户端</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="分层解耦—三层架构"><a href="#分层解耦—三层架构" class="headerlink" title="分层解耦—三层架构"></a>分层解耦—三层架构</h3><p><em>复用性强，便于维护，利用扩展</em></p>
+<p>![image-20240217124259126](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217124259126.png)</p>
+<ul>
+<li><p>controller：控制层，接收前端发送的请求，对请求进行处理，并响应数据。</p>
+</li>
+<li><p>service：业务逻辑层，处理具体的业务逻辑。</p>
+</li>
+<li><p>dao：数据访问层（DataAccessObject）（持久层），负责数据访问操作，包括数据的增、删、改、查。</p>
+</li>
+</ul>
+<p>![image-20221204201342490](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20221204201342490.png)</p>
+<h3 id="分层解耦"><a href="#分层解耦" class="headerlink" title="分层解耦"></a>分层解耦</h3><pre><code>   高内聚指的是：一个模块中各个元素之间的联系的紧密程度，如果各个元素(语句、程序段)之间的联系程度越高，则内聚性越高，即 &quot;高内聚&quot;。
+
+   低耦合指的是：软件中各个层、模块之间的依赖关联程序越低越好。
+</code></pre>
+<p>解耦思路</p>
+<ul>
+<li>提供一个容器，容器中存储一些对象(例：EmpService对象)</li>
+<li>controller程序从容器中获取EmpService类型的对象</li>
+</ul>
+<p><strong>控制反转：</strong> Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转。</p>
+<p><strong>依赖注入：</strong> Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入。</p>
+<h4 id="IOC-DI入门"><a href="#IOC-DI入门" class="headerlink" title="IOC&amp;DI入门"></a>IOC&amp;DI入门</h4><p>任务：完成Controller层、Service层、Dao层的代码解耦</p>
+<p>思路：</p>
+<ol>
+<li>删除Controller层、Service层中new对象的代码</li>
+<li>Service层及Dao层的实现类，交给IOC容器管理</li>
+<li>为Controller及Service注入运行时依赖的对象<ul>
+<li>Controller程序中注入依赖的Service层对象</li>
+<li>Service程序中注入依赖的Dao层对象</li>
+</ul>
+</li>
+</ol>
+<p>修改入门案例代码：</p>
+<ul>
+<li><strong>Controller层：</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span>  <span class="comment">//@RestController = @Controller + @ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EmpController</span> &#123;</span><br><span class="line"><span class="meta">@Autowired</span> <span class="comment">//运行时,从IOC容器中获取该类型对象,赋值给该变量</span></span><br><span class="line"><span class="keyword">private</span> EmpService empService ;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/listEmp&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">list</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//1. 调用service, 获取数据</span></span><br><span class="line">    List&lt;Emp&gt; empList = empService.listEmp();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 响应数据</span></span><br><span class="line">    <span class="keyword">return</span> Result.success(empList);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><strong>Service层：</strong></li>
+</ul>
+<p>@Service<br>public class EmpServiceA implements EmpService {</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span> <span class="comment">//运行时,从IOC容器中获取该类型对象,赋值给该变量</span></span><br><span class="line"><span class="keyword">private</span> EmpDao empDao ;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Emp&gt; <span class="title function_">listEmp</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//1. 调用dao, 获取数据</span></span><br><span class="line">    List&lt;Emp&gt; empList = empDao.listEmp();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 对数据进行转换处理 - gender, job</span></span><br><span class="line">    empList.stream().forEach(emp -&gt; &#123;</span><br><span class="line">        <span class="comment">//处理 gender 1: 男, 2: 女</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">gender</span> <span class="operator">=</span> emp.getGender();</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&quot;1&quot;</span>.equals(gender))&#123;</span><br><span class="line">            emp.setGender(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;2&quot;</span>.equals(gender))&#123;</span><br><span class="line">            emp.setGender(<span class="string">&quot;女&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//处理job - 1: 讲师, 2: 班主任 , 3: 就业指导</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">job</span> <span class="operator">=</span> emp.getJob();</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&quot;1&quot;</span>.equals(job))&#123;</span><br><span class="line">            emp.setJob(<span class="string">&quot;讲师&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;2&quot;</span>.equals(job))&#123;</span><br><span class="line">            emp.setJob(<span class="string">&quot;班主任&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;3&quot;</span>.equals(job))&#123;</span><br><span class="line">            emp.setJob(<span class="string">&quot;就业指导&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> empList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>}</p>
+<ul>
+<li><strong>Dao层：</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EmpDaoA</span> <span class="keyword">implements</span> <span class="title class_">EmpDao</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Emp&gt; <span class="title function_">listEmp</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//1. 加载并解析emp.xml</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">file</span> <span class="operator">=</span> <span class="built_in">this</span>.getClass().getClassLoader().getResource(<span class="string">&quot;emp.xml&quot;</span>).getFile();</span><br><span class="line">        System.out.println(file);</span><br><span class="line">        List&lt;Emp&gt; empList = XmlParserUtils.parse(file, Emp.class);</span><br><span class="line">        <span class="keyword">return</span> empList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="IOC详解"><a href="#IOC详解" class="headerlink" title="IOC详解"></a>IOC详解</h4><pre><code>  前面我们提到IOC控制反转，就是将对象的控制权交给Spring的IOC容器，由IOC容器创建及管理对象。IOC容器创建的对象称为bean对象。要把某个对象交给IOC容器管理，需要在类上添加一个注解：@Component 
+</code></pre>
+<p>​     而Spring框架为了更好的标识web应用程序开发当中，bean对象到底归属于哪一层，又提供了@Component的衍生注解</p>
+<p>​    要把某个对象交给IOC容器管理，需要在对应的类上加上如下注解之一：</p>
+<table>
+<thead>
+<tr>
+<th align="left">注解</th>
+<th>说明</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">@Controller</td>
+<td>@Component的衍生注解</td>
+<td>标注在控制器类上</td>
+</tr>
+<tr>
+<td align="left">@Service</td>
+<td>@Component的衍生注解</td>
+<td>标注在业务类上</td>
+</tr>
+<tr>
+<td align="left">@Repository</td>
+<td>@Component的衍生注解</td>
+<td>标注在数据访问类上（由于与mybatis整合，用的少）</td>
+</tr>
+<tr>
+<td align="left">@Component</td>
+<td>声明bean的基础注解</td>
+<td>不属于以上三类时，用此注解</td>
+</tr>
+</tbody></table>
+<p>每一个Bean都有一个属于自己的名字，可以通过注解的value属性指定bean的名字。如果没有指定，默认为类名首字母小写。</p>
+<p>![image-20240217161141974](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217161141974.png)</p>
+<blockquote>
+<p>注意事项: </p>
+<ul>
+<li>声明bean的时候，可以通过value属性指定bean的名字，如果没有指定，默认为类名首字母小写。</li>
+<li>使用以上四个注解都可以声明bean，但是在springboot集成web开发中，声明控制器bean只能用@Controller。</li>
+</ul>
+</blockquote>
+<h4 id="DI详解"><a href="#DI详解" class="headerlink" title="DI详解"></a>DI详解</h4><p>  我们使用@Autowired这个注解，完成了依赖注入的操作，而这个Autowired翻译过来叫：自动装配。</p>
+<p>![image-20240217164459026](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217164459026.png)</p>
+<p>在IOC容器中，存在多个相同类型的bean对象（如上图）</p>
+<ol>
+<li>使用@Primary注解：当存在多个相同类型的Bean注入时，加上@Primary注解，来确定默认的实现。</li>
+</ol>
+<p>![image-20240217165102273](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217165102273.png)</p>
+<p>  2.使用@Qualifier注解：指定当前要注入的bean对象。 在@Qualifier的value属性中，指定注入的bean的名称。@Qualifier注解不能单独使用，必须配合@Autowired使用</p>
+<p>![image-20240217165520986](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217165520986.png)</p>
+<p>3.使用@Resource注解：是按照bean的名称进行注入。通过name属性指定要注入的bean的名称。</p>
+<p>![image-20240217165841291](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240217165841291.png)</p>
+<p>面试题 ： @Autowird 与 @Resource的区别</p>
+<ul>
+<li>@Autowired 是spring框架提供的注解，而@Resource是JDK提供的注解</li>
+<li>@Autowired 默认是按照类型注入,如果容器中存在多个与类型匹配的 Bean，它会尝试按照名称进行匹配，而@Resource是按照名称注入</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/17/%E5%93%8D%E5%BA%94---%E6%A1%88%E4%BE%8B-----%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><h5 id="外置tomcat"><a href="#外置tomcat" class="headerlink" title="外置tomcat"></a>外置tomcat</h5><p>—-.&gt;（springboot有内嵌tomcat使用的比较多）–&gt;默认8080端口</p>
+<h6 id="启动：D-Program-Files-x86-apache-tomcat-10-1-18-bin"><a href="#启动：D-Program-Files-x86-apache-tomcat-10-1-18-bin" class="headerlink" title="启动：D:\Program Files (x86)\apache-tomcat-10.1.18\bin"></a>启动：D:\Program Files (x86)\apache-tomcat-10.1.18\bin</h6><p>点击startup.bat</p>
+<h6 id="关闭则停止"><a href="#关闭则停止" class="headerlink" title="关闭则停止"></a>关闭则停止</h6><h6 id="网页部署：D-Program-Files-x86-apache-tomcat-10-1-18-webapps"><a href="#网页部署：D-Program-Files-x86-apache-tomcat-10-1-18-webapps" class="headerlink" title="网页部署：D:\Program Files (x86)\apache-tomcat-10.1.18\webapps"></a>网页部署：D:\Program Files (x86)\apache-tomcat-10.1.18\webapps</h6><p>默认8080端口</p>
+<p>直接访问localhost:8080&#x2F;xxx&#x2F;index.html(注意设置head里 <meta charset="UTF-8">防止中文乱码)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/16/Tomcat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTTP协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="HTTP—请求数据格式"><a href="#HTTP—请求数据格式" class="headerlink" title="HTTP—请求数据格式"></a>HTTP—请求数据格式</h2><h5 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h5><p>![PixPin_2024-02-16_11-25-38](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-38.png)</p>
+<h5 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h5><p>![PixPin_2024-02-16_11-25-50](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-50.png)</p>
+<img src="D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216112617089.png" alt="image-20240216112617089" style="zoom:67%;" />
+
+<h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a><strong>请求行</strong></h3><p>由3部分组成，分别为：请求方法、URL以及协议版本，之间由空格分隔</p>
+<p>请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的</p>
+<p>URL地址中如果包含中文，浏览器会自动对中文字符进行编码之后再发送</p>
+<p>协议版本的格式为：HTTP&#x2F;主版本号.次版本号，常用的有HTTP&#x2F;1.0和HTTP&#x2F;1.1</p>
+<table>
+<thead>
+<tr>
+<th align="left">GET</th>
+<th align="left">请求获取Request-URI所标识的资源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td align="left">HEAD</td>
+<td align="left">请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td align="left">TRACE</td>
+<td align="left">请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td align="left">CONNECT</td>
+<td align="left">HTTP&#x2F;1.1协议中预留给能够将连接改为管道方式的代理服务器</td>
+</tr>
+<tr>
+<td align="left">OPTIONS</td>
+<td align="left">请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody></table>
+<h3 id="请求头部"><a href="#请求头部" class="headerlink" title="请求头部"></a><strong>请求头部</strong></h3><p>请求头部为请求报文添加了一些附加信息，由“键&#x2F;值”对组成，每行一对，名和值之间使用冒号分隔</p>
+<p>常见请求头如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">请求头</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Host</td>
+<td align="left">接受请求的服务器地址，可以是IP:端口号，也可以是域名</td>
+</tr>
+<tr>
+<td align="left">User-Agent</td>
+<td align="left">发送请求的应用程序名称</td>
+</tr>
+<tr>
+<td align="left">Connection</td>
+<td align="left">指定与连接相关的属性，如Connection:Keep-Alive</td>
+</tr>
+<tr>
+<td align="left">Accept-Charset</td>
+<td align="left">通知服务端可以发送的编码格式</td>
+</tr>
+<tr>
+<td align="left">Accept-Encoding</td>
+<td align="left">通知服务端可以发送的数据压缩格式</td>
+</tr>
+<tr>
+<td align="left">Accept-Language</td>
+<td align="left">通知服务端可以发送的语言</td>
+</tr>
+<tr>
+<td align="left">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,<em>&#x2F;</em>;q&#x3D;0.8</td>
+<td align="left">表示客户端可以接受的内容类型,多个值使用;分号隔开q&#x3D;0.9 表示权重优先级,*&#x2F;*表示可以接受任意类型内容</td>
+</tr>
+<tr>
+<td align="left">Content-Type: application&#x2F;x-www-form-urlencoded</td>
+<td align="left">表单提交时才有可能出现,表示表单的数据类型,使用url编码,url编码 % 16位数</td>
+</tr>
+<tr>
+<td align="left">Upgrade-Insecure-Requests</td>
+<td align="left">告诉服务器，浏览器可以处理https协议</td>
+</tr>
+</tbody></table>
+<p>请求头部的最后会有一个空行，表示请求头部结束，接下来为请求正文，这一行非常重要，必不可少</p>
+<h3 id="请求正文-体"><a href="#请求正文-体" class="headerlink" title="请求正文&#x2F;体"></a><strong>请求正文&#x2F;体</strong></h3><p>可选部分，比如GET请求就没有请求正文</p>
+<p>POST请求体中存放的是表单提交的键值对。例如Json格式：{“<code>name</code>“:”c”,”<code>age</code>“:<code>10&#125;</code></p>
+<p><strong>请求方式-GET：请求参数在请求行中，没有请求体，如：&#x2F;brand&#x2F;findAll?name&#x3D;OPPO&amp;status&#x3D;1。GET请求大小是有限制的。</strong></p>
+<p><strong>请求方式-POST：请求参数在请求体中，POST请求大小是没有限制的。</strong></p>
+<p>![image-20240216113032729](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113032729.png)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:63342/itheima_web_project/springboot-web-quickstart/static/01.%20GET-POST.html?name=Tom&amp;password=123</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240216113105867](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113105867.png)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:63342/itheima_web_project/springboot-web-quickstart/static/01.%20GET-POST.html</span><br></pre></td></tr></table></figure>
+
+<img src="D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113206415.png" alt="image-20240216113206415" style="zoom: 80%;" />
+
+<h2 id="HTTP—响应数据格式"><a href="#HTTP—响应数据格式" class="headerlink" title="HTTP—响应数据格式"></a>HTTP—响应数据格式</h2><p>![image-20240216115523148](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216115523148.png)</p>
+<h3 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a><strong>状态行</strong></h3><p>状态行格式为：HTTP-Version Status-Code Reason-Phrase CRLF，分别为：协议版本，状态码，状态码描述，之间由空格分隔。</p>
+<p>其中，HTTP-Version表示服务器HTTP协议的版本；Status-Code表示服务器发回的响应状态代码；Reason-Phrase表示状态代码的文本描述。</p>
+<p>状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。</p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<p>常见状态代码、状态描述的说明如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">200</td>
+<td align="left">响应成功</td>
+</tr>
+<tr>
+<td align="left">301</td>
+<td align="left">永久重定向，搜索引擎将删除源地址，保留重定向地址</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">暂时重定向，重定向地址由响应头中的Location属性指定（JSP中Forward和Redirect之间的区别） 由于搜索引擎的判定问题，较为复杂的URL容易被其它网站使用更为精简的URL及302重定向劫持</td>
+</tr>
+<tr>
+<td align="left">304</td>
+<td align="left">缓存文件并未过期，还可继续使用，无需再次从服务端获取</td>
+</tr>
+<tr>
+<td align="left">400</td>
+<td align="left">客户端请求有语法错误，不能被服务器识别</td>
+</tr>
+<tr>
+<td align="left">403</td>
+<td align="left">服务器接收到请求，但是拒绝提供服务（认证失败）</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="left">500</td>
+<td align="left">服务器内部错误</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/16/HTTP%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-maven（管理和构建java项目的工具）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="maven（管理和构建java项目的工具）"><a href="#maven（管理和构建java项目的工具）" class="headerlink" title="maven（管理和构建java项目的工具）"></a>maven（管理和构建java项目的工具）</h3><h6 id="1-管理-jar包-管理包-可升级。"><a href="#1-管理-jar包-管理包-可升级。" class="headerlink" title="1.管理(jar包)管理包,可升级。"></a>1.管理(jar包)管理包,可升级。</h6><p>添加以下依赖到 pom.xml 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;!-- 在这里添加你的依赖 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;ldapjdk&lt;/groupId&gt;  &lt;!-- 库名称，也可以自定义 --&gt;</span><br><span class="line">        &lt;artifactId&gt;ldapjdk&lt;/artifactId&gt;    &lt;!--库名称，也可以自定义--&gt;</span><br><span class="line">        &lt;version&gt;1.0&lt;/version&gt; &lt;!--版本号--&gt;</span><br><span class="line">        &lt;scope&gt;system&lt;/scope&gt; &lt;!--作用域--&gt;</span><br><span class="line">        &lt;systemPath&gt;$&#123;basedir&#125;\src\lib\ldapjdk.jar&lt;/systemPath&gt; &lt;!--项目根目录下的lib文件夹下--&gt;</span><br><span class="line">    &lt;/dependency&gt; </span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<p>生成的目录结构(各开发软件统一)</p>
+<p>![image-20240215114850696](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240215114850696.png)</p>
+<p>pom.xml 文件完整代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; </span><br><span class="line">   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">   xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 </span><br><span class="line">   http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</span><br><span class="line">   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">   &lt;groupId&gt;com.companyname.bank&lt;/groupId&gt;</span><br><span class="line">   //maven的坐标</span><br><span class="line">   &lt;artifactId&gt;consumerBanking&lt;/artifactId&gt;</span><br><span class="line">   &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;name&gt;consumerBanking&lt;/name&gt;</span><br><span class="line">   &lt;url&gt;http://maven.apache.org&lt;/url&gt;</span><br><span class="line"> </span><br><span class="line">   &lt;dependencies&gt;</span><br><span class="line">      &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">         &lt;version&gt;3.8.1&lt;/version&gt;</span><br><span class="line">         &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line"> </span><br><span class="line">      &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;ldapjdk&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;ldapjdk&lt;/artifactId&gt;</span><br><span class="line">         &lt;scope&gt;system&lt;/scope&gt;</span><br><span class="line">         &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">         &lt;systemPath&gt;$&#123;basedir&#125;\src\lib\ldapjdk.jar&lt;/systemPath&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line">   &lt;/dependencies&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>项目构建</p>
+<p>清理—编译—测试—打包—发布</p>
+<p>maven结构</p>
+<p>![image-20240215115659561](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240215115659561.png)</p>
+<p>仓库是先从本地仓库查找，再去远程仓库(私服)(阿里云)，再去中央仓库(唯一，国外)查找。</p>
+<p> SpingBootWeb</p>
+<p>浏览器发起 &#x2F;hello后，浏览器返回hello，world</p>
+<p>1.创建springboot工程</p>
+<p>2.定义一个HelloController类(HelloController.java文件夹)，添加hello方法</p>
+<p>3.启动类–启动springboot工程(run)—–&gt;localhost:8080&#x2F;hello</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-GIT拉取GitHub项目到本地" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -370,7 +1053,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://82.156.30.16/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>另一个博客</a>
+              <a href="http://82.156.30.16/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Another_blog</a>
             </li>
           
         </ul>

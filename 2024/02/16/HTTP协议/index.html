@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://silvercatcloud.github.io">
-  <title>GIT拉取GitHub项目到本地 | silvercat</title>
+  <title>silvercat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+  <meta name="description" content="HTTPHTTP—请求数据格式GET请求![PixPin_2024-02-16_11-25-38](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-38.png) POST请求![PixPin_2024-02-16_11-25-50](D:\A little 资料集合\Markdown文档\MarkDown_im">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIT拉取GitHub项目到本地">
-<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/index.html">
+<meta property="og:title" content="silvercat">
+<meta property="og:url" content="https://silvercatcloud.github.io/2024/02/16/HTTP%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="silvercat">
-<meta property="og:description" content="关键语句： 123456git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库git add README.md &#x2F;&#x2F;文件添加到仓库git add . &#x2F;&#x2F;不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 git commit -m &quot;first commit&quot; &#x2F;&#x2F;把文件提交到仓库git remote add origin">
+<meta property="og:description" content="HTTPHTTP—请求数据格式GET请求![PixPin_2024-02-16_11-25-38](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-38.png) POST请求![PixPin_2024-02-16_11-25-50](D:\A little 资料集合\Markdown文档\MarkDown_im">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-10T07:23:25.000Z">
-<meta property="article:modified_time" content="2024-02-10T07:24:50.049Z">
+<meta property="og:image" content="d:\A little %E8%B5%84%E6%96%99%E9%9B%86%E5%90%88\Markdown%E6%96%87%E6%A1%A3\MarkDown_image\image-20240216112617089.png">
+<meta property="og:image" content="d:\A little %E8%B5%84%E6%96%99%E9%9B%86%E5%90%88\Markdown%E6%96%87%E6%A1%A3\MarkDown_image\image-20240216113206415.png">
+<meta property="article:published_time" content="2024-02-16T03:32:34.595Z">
+<meta property="article:modified_time" content="2024-02-16T05:23:10.791Z">
 <meta property="article:author" content="YuanWenyi">
-<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\A little %E8%B5%84%E6%96%99%E9%9B%86%E5%90%88\Markdown%E6%96%87%E6%A1%A3\MarkDown_image\image-20240216112617089.png">
   
     <link rel="alternative" href="/atom.xml" title="silvercat" type="application/atom+xml">
   
@@ -151,30 +153,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GIT拉取GitHub项目到本地" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTTP协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      GIT拉取GitHub项目到本地
-    </h1>
-  
-
-        
-        <a href="/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" class="archive-article-date">
-  	<time datetime="2024-02-10T07:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-10</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关键语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">git add README.md //文件添加到仓库</span><br><span class="line">git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库</span><br><span class="line">git push -u origin master //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure>
+        <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="HTTP—请求数据格式"><a href="#HTTP—请求数据格式" class="headerlink" title="HTTP—请求数据格式"></a>HTTP—请求数据格式</h2><h5 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h5><p>![PixPin_2024-02-16_11-25-38](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-38.png)</p>
+<h5 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h5><p>![PixPin_2024-02-16_11-25-50](D:\A little 资料集合\Markdown文档\MarkDown_image\PixPin_2024-02-16_11-25-50.png)</p>
+<img src="D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216112617089.png" alt="image-20240216112617089" style="zoom:67%;" />
 
-<p>详见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/193140870">https://zhuanlan.zhihu.com/p/193140870</a></p>
+<h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a><strong>请求行</strong></h3><p>由3部分组成，分别为：请求方法、URL以及协议版本，之间由空格分隔</p>
+<p>请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的</p>
+<p>URL地址中如果包含中文，浏览器会自动对中文字符进行编码之后再发送</p>
+<p>协议版本的格式为：HTTP&#x2F;主版本号.次版本号，常用的有HTTP&#x2F;1.0和HTTP&#x2F;1.1</p>
+<table>
+<thead>
+<tr>
+<th align="left">GET</th>
+<th align="left">请求获取Request-URI所标识的资源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td align="left">HEAD</td>
+<td align="left">请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td align="left">TRACE</td>
+<td align="left">请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td align="left">CONNECT</td>
+<td align="left">HTTP&#x2F;1.1协议中预留给能够将连接改为管道方式的代理服务器</td>
+</tr>
+<tr>
+<td align="left">OPTIONS</td>
+<td align="left">请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody></table>
+<h3 id="请求头部"><a href="#请求头部" class="headerlink" title="请求头部"></a><strong>请求头部</strong></h3><p>请求头部为请求报文添加了一些附加信息，由“键&#x2F;值”对组成，每行一对，名和值之间使用冒号分隔</p>
+<p>常见请求头如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">请求头</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Host</td>
+<td align="left">接受请求的服务器地址，可以是IP:端口号，也可以是域名</td>
+</tr>
+<tr>
+<td align="left">User-Agent</td>
+<td align="left">发送请求的应用程序名称</td>
+</tr>
+<tr>
+<td align="left">Connection</td>
+<td align="left">指定与连接相关的属性，如Connection:Keep-Alive</td>
+</tr>
+<tr>
+<td align="left">Accept-Charset</td>
+<td align="left">通知服务端可以发送的编码格式</td>
+</tr>
+<tr>
+<td align="left">Accept-Encoding</td>
+<td align="left">通知服务端可以发送的数据压缩格式</td>
+</tr>
+<tr>
+<td align="left">Accept-Language</td>
+<td align="left">通知服务端可以发送的语言</td>
+</tr>
+<tr>
+<td align="left">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,<em>&#x2F;</em>;q&#x3D;0.8</td>
+<td align="left">表示客户端可以接受的内容类型,多个值使用;分号隔开q&#x3D;0.9 表示权重优先级,*&#x2F;*表示可以接受任意类型内容</td>
+</tr>
+<tr>
+<td align="left">Content-Type: application&#x2F;x-www-form-urlencoded</td>
+<td align="left">表单提交时才有可能出现,表示表单的数据类型,使用url编码,url编码 % 16位数</td>
+</tr>
+<tr>
+<td align="left">Upgrade-Insecure-Requests</td>
+<td align="left">告诉服务器，浏览器可以处理https协议</td>
+</tr>
+</tbody></table>
+<p>请求头部的最后会有一个空行，表示请求头部结束，接下来为请求正文，这一行非常重要，必不可少</p>
+<h3 id="请求正文-体"><a href="#请求正文-体" class="headerlink" title="请求正文&#x2F;体"></a><strong>请求正文&#x2F;体</strong></h3><p>可选部分，比如GET请求就没有请求正文</p>
+<p>POST请求体中存放的是表单提交的键值对。例如Json格式：{“<code>name</code>“:”c”,”<code>age</code>“:<code>10&#125;</code></p>
+<p><strong>请求方式-GET：请求参数在请求行中，没有请求体，如：&#x2F;brand&#x2F;findAll?name&#x3D;OPPO&amp;status&#x3D;1。GET请求大小是有限制的。</strong></p>
+<p><strong>请求方式-POST：请求参数在请求体中，POST请求大小是没有限制的。</strong></p>
+<p>![image-20240216113032729](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113032729.png)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:63342/itheima_web_project/springboot-web-quickstart/static/01.%20GET-POST.html?name=Tom&amp;password=123</span><br></pre></td></tr></table></figure>
+
+<p>![image-20240216113105867](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113105867.png)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:63342/itheima_web_project/springboot-web-quickstart/static/01.%20GET-POST.html</span><br></pre></td></tr></table></figure>
+
+<img src="D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216113206415.png" alt="image-20240216113206415" style="zoom: 80%;" />
+
+<h2 id="HTTP—响应数据格式"><a href="#HTTP—响应数据格式" class="headerlink" title="HTTP—响应数据格式"></a>HTTP—响应数据格式</h2><p>![image-20240216115523148](D:\A little 资料集合\Markdown文档\MarkDown_image\image-20240216115523148.png)</p>
+<h3 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a><strong>状态行</strong></h3><p>状态行格式为：HTTP-Version Status-Code Reason-Phrase CRLF，分别为：协议版本，状态码，状态码描述，之间由空格分隔。</p>
+<p>其中，HTTP-Version表示服务器HTTP协议的版本；Status-Code表示服务器发回的响应状态代码；Reason-Phrase表示状态代码的文本描述。</p>
+<p>状态代码由三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。</p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<p>常见状态代码、状态描述的说明如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">200</td>
+<td align="left">响应成功</td>
+</tr>
+<tr>
+<td align="left">301</td>
+<td align="left">永久重定向，搜索引擎将删除源地址，保留重定向地址</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">暂时重定向，重定向地址由响应头中的Location属性指定（JSP中Forward和Redirect之间的区别） 由于搜索引擎的判定问题，较为复杂的URL容易被其它网站使用更为精简的URL及302重定向劫持</td>
+</tr>
+<tr>
+<td align="left">304</td>
+<td align="left">缓存文件并未过期，还可继续使用，无需再次从服务端获取</td>
+</tr>
+<tr>
+<td align="left">400</td>
+<td align="left">客户端请求有语法错误，不能被服务器识别</td>
+</tr>
+<tr>
+<td align="left">403</td>
+<td align="left">服务器接收到请求，但是拒绝提供服务（认证失败）</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="left">500</td>
+<td align="left">服务器内部错误</td>
+</tr>
+</tbody></table>
 
       
 
@@ -204,17 +342,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -265,7 +392,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/10/GIT%E6%8B%89%E5%8F%96GitHub%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://silvercatcloud.github.io/2024/02/16/HTTP%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,7 +406,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/02/16/Tomcat/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -288,6 +415,11 @@
       </div>
     </a>
   
+  
+    <a href="/2024/02/15/maven%EF%BC%88%E7%AE%A1%E7%90%86%E5%92%8C%E6%9E%84%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
