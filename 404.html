@@ -595,8 +595,13 @@ $(function () {
                                 <script
                                     src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
                                 <script src="/js/matery.js"></script>
-                                <script
-                                    src="/"></script>
+                                <script type="text/javascript">
+                                    var OriginTitile = document.title, st;
+                                    document.addEventListener("visibilitychange", function () {
+                                        document.hidden ? (document.title = "₍ᐢ..ᐢ₎♡silvercatの博客~", clearTimeout(st)) : (document.title = "₍ᐢ..ᐢ₎♡silvercat♡~", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+                                    })
+                                </script>
+
 
                                 
 
