@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Nginx</title>
+      <link href="/2024/02/22/nginx/"/>
+      <url>/2024/02/22/nginx/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Nginx上传静态界面"><a href="#Nginx上传静态界面" class="headerlink" title="Nginx上传静态界面"></a>Nginx上传静态界面</h1><p>在nginx的目录里找到html，因为conf中的nginx.conf默认配置是root html。</p><p>所以要上传的html文件放在这个目录下面就行。</p><p>然后启动就行。注意nginx的默认端口号是80.所以需要确保80端口有没有被占。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查看端口使用</span><br><span class="line">$ netstat -lntp</span><br><span class="line">#杀死改进程</span><br><span class="line">$ kill 21307</span><br><span class="line">#重新启动</span><br><span class="line">[root@VM-8-5-centos conf]# ./sbin/nginx -s reload</span><br></pre></td></tr></table></figure><p>配置域名</p><p>需改nginx.cong里的server_name example.com;</p><p>保存重启即可，记得提前域名解析。</p><p>配置SSL证书</p><p>1.新建nginx目录下cert存放pem和key文件（阿里云SSL证书下载）</p><p>2.nginx.conf需改（先注释之前的http server配置）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"># 服务器端口使用443，开启ssl, 这里ssl就是上面安装的ssl模块</span><br><span class="line">listen       443 ssl;</span><br><span class="line"># 域名，多个以空格分开</span><br><span class="line">server_name  &lt;a href=&quot;https://www.aliyun.com/minisite/goods?userCode=veyumm2k&quot; target=&quot;_blank&quot;&gt;hack520.com&lt;/a&gt; &lt;a href=&quot;https://www.aliyun.com/minisite/goods?userCode=veyumm2k&quot; target=&quot;_blank&quot;&gt;www.hack520.com&lt;/a&gt;;</span><br><span class="line"></span><br><span class="line"># ssl证书地址</span><br><span class="line">ssl_certificate     /usr/local/nginx/cert/ssl.pem;  # pem文件的路径</span><br><span class="line">ssl_certificate_key  /usr/local/nginx/cert/ssl.key; # key文件的路径</span><br><span class="line"></span><br><span class="line"># ssl验证相关配置</span><br><span class="line">ssl_session_timeout  5m;    #缓存有效期</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    #加密算法</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    #安全链接可选的加密协议</span><br><span class="line">ssl_prefer_server_ciphers on;   #使用服务器端的首选算法</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    root   html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">将 http 重定向 https。</span><br><span class="line">server &#123;</span><br><span class="line">listen       80;</span><br><span class="line">server_name  example.com;</span><br></pre></td></tr></table></figure><p>3.保存重启</p><p><img src="/../images/PixPin_2024-02-22_18-15-23.png" alt="PixPin_2024-02-22_18-15-23"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mybatis基础</title>
       <link href="/2024/02/17/mybatis-ji-chu/"/>
       <url>/2024/02/17/mybatis-ji-chu/</url>
